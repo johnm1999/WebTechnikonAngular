@@ -65,11 +65,11 @@ export class UptadeOwnerComponent {
   }
   //user can delete a owner by pressing button safe delete
   safeDelete() {
-    this.http.put(`http://localhost:8080/webTechnikon-1.0-SNAPSHOT/resources/propertyOwners/safedeleteby/${this.ownerId}`, null) // Χρησιμοποιούμε PUT χωρίς body
+    this.http.put(`http://localhost:8080/webTechnikon-1.0-SNAPSHOT/resources/propertyOwners/safedeleteby/${this.ownerId}`, null)
       .subscribe(response => {
         console.log(response);
-        this.ownerDataLoaded = false; // Καθαρίζουμε τη φόρμα
-        this.propertyOwnerForm.reset(); // Καθαρίζουμε τα πεδία
+        this.ownerDataLoaded = false; // clear form
+        this.propertyOwnerForm.reset(); 
       }, error => {
         console.error('Error deleting property owner:', error);
       });
