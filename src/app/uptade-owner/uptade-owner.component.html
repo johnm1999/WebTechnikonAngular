@@ -1,0 +1,67 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Update Property Owner</h2>
+
+  <form (ngSubmit)="onIdSubmit()" class="mb-4">
+    <div class="mb-3">
+      <label for="ownerId" class="form-label">Enter Owner ID:</label>
+      <input type="number" id="ownerId" [(ngModel)]="ownerId" name="ownerId" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Load Owner Data</button>
+  </form>
+
+  <div *ngIf="ownerDataLoaded">
+    <h3 class="mb-4">Edit Owner Information</h3>
+
+    <form [formGroup]="propertyOwnerForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="vat" class="form-label">VAT:</label>
+        <input id="vat" formControlName="vat" type="text" class="form-control" required>
+        <div *ngIf="propertyOwnerForm.get('vat')?.errors?.['required']" class="text-danger">VAT is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name:</label>
+        <input id="firstName" formControlName="firstName" type="text" class="form-control" required>
+        <div *ngIf="propertyOwnerForm.get('firstName')?.errors?.['required']" class="text-danger">First Name is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name:</label>
+        <input id="lastName" formControlName="lastName" type="text" class="form-control" required>
+        <div *ngIf="propertyOwnerForm.get('lastName')?.errors?.['required']" class="text-danger">Last Name is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="address" class="form-label">Address:</label>
+        <input id="address" formControlName="address" type="text" class="form-control" required>
+        <div *ngIf="propertyOwnerForm.get('address')?.errors?.['required']" class="text-danger">Address is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Phone Number:</label>
+        <input id="phoneNumber" formControlName="phoneNumber" type="text" class="form-control" required>
+        <div *ngIf="propertyOwnerForm.get('phoneNumber')?.errors?.['required']" class="text-danger">Phone Number is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input id="email" formControlName="email" type="email" class="form-control" required>
+        <div *ngIf="propertyOwnerForm.get('email')?.errors?.['required']" class="text-danger">Email is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="userName" class="form-label">User Name:</label>
+        <input id="userName" formControlName="userName" type="text" class="form-control" required>
+        <div *ngIf="propertyOwnerForm.get('userName')?.errors?.['required']" class="text-danger">User Name is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input id="password" formControlName="password" type="password" class="form-control" required>
+        <div *ngIf="propertyOwnerForm.get('password')?.errors?.['required']" class="text-danger">Password is required.</div>
+      </div>
+
+      <button type="submit" class="btn btn-success">Update Owner</button>
+    </form>
+  </div>
+</div>
