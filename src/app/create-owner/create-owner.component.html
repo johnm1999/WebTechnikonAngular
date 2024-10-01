@@ -1,0 +1,82 @@
+<h1 class="text-center">Create Property Owner</h1>
+<form [formGroup]="propertyOwnerForm" (ngSubmit)="onSubmit()">
+    <div class="formGroup">
+        <label for="vat">VAT:</label>
+        <input id="vat" formControlName="vat" class="form-control" required />
+        <div
+            *ngIf="propertyOwnerForm.get('vat')?.invalid && (propertyOwnerForm.get('vat')?.touched || propertyOwnerForm.get('vat')?.dirty)">
+            <small *ngIf="propertyOwnerForm.get('vat')?.errors?.['required']">VAT is required.</small>
+            <small *ngIf="propertyOwnerForm.get('vat')?.errors?.['pattern']">VAT must be 10 digits.</small>
+        </div>
+    </div>
+    <div class="formGroup">
+        <label for="firstName">First Name:</label>
+        <input id="firstName" formControlName="firstName" class="form-control" required />
+        <div
+            *ngIf="propertyOwnerForm.get('firstName')?.invalid && (propertyOwnerForm.get('firstName')?.touched || propertyOwnerForm.get('firstName')?.dirty)">
+            <small *ngIf="propertyOwnerForm.get('firstName')?.errors?.['required']">First Name is required.</small>
+            <small *ngIf="propertyOwnerForm.get('firstName')?.errors?.['minlength']">First Name must be at least 2
+                characters long.</small>
+        </div>
+    </div>
+    <div class="formGroup">
+        <label for="lastName">Last Name:</label>
+        <input id="lastName" formControlName="lastName" class="form-control" required />
+        <div
+            *ngIf="propertyOwnerForm.get('lastName')?.invalid && (propertyOwnerForm.get('lastName')?.touched || propertyOwnerForm.get('lastName')?.dirty)">
+            <small *ngIf="propertyOwnerForm.get('lastName')?.errors?.['required']">Last Name is required.</small>
+            <small *ngIf="propertyOwnerForm.get('lastName')?.errors?.['minlength']">Last Name must be at least 2
+                characters long.</small>
+        </div>
+    </div>
+    <div class="formGroup">
+        <label for="address">Address:</label>
+        <input id="address" formControlName="address" class="form-control" required />
+        <div
+            *ngIf="propertyOwnerForm.get('address')?.invalid && (propertyOwnerForm.get('address')?.touched || propertyOwnerForm.get('address')?.dirty)">
+            <small *ngIf="propertyOwnerForm.get('address')?.errors?.['required']">Address is required.</small>
+        </div>
+    </div>
+    <div class="formGroup">
+        <label for="phoneNumber">Phone Number:</label>
+        <input id="phoneNumber" formControlName="phoneNumber" class="form-control" required />
+        <div
+            *ngIf="propertyOwnerForm.get('phoneNumber')?.invalid && (propertyOwnerForm.get('phoneNumber')?.touched || propertyOwnerForm.get('phoneNumber')?.dirty)">
+            <small *ngIf="propertyOwnerForm.get('phoneNumber')?.errors?.['required']">Phone Number is required.</small>
+            <small *ngIf="propertyOwnerForm.get('phoneNumber')?.errors?.['pattern']">Phone Number must be 10
+                digits.</small>
+        </div>
+    </div>
+    <div class="formGroup">
+        <label for="email">Email:</label>
+        <input id="email" formControlName="email" class="form-control" required type="email" />
+        <div
+            *ngIf="propertyOwnerForm.get('email')?.invalid && (propertyOwnerForm.get('email')?.touched || propertyOwnerForm.get('email')?.dirty)">
+            <small *ngIf="propertyOwnerForm.get('email')?.errors?.['required']">Email is required.</small>
+            <small *ngIf="propertyOwnerForm.get('email')?.errors?.['email']">Must be a valid email address.</small>
+        </div>
+    </div>
+    <div class="formGroup">
+        <label for="userName">Username:</label>
+        <input id="userName" formControlName="userName" class="form-control" required />
+        <div
+            *ngIf="propertyOwnerForm.get('userName')?.invalid && (propertyOwnerForm.get('userName')?.touched || propertyOwnerForm.get('userName')?.dirty)">
+            <small *ngIf="propertyOwnerForm.get('userName')?.errors?.['required']">Username is required.</small>
+            <small *ngIf="propertyOwnerForm.get('userName')?.errors?.['minlength']">Username must be at least 3
+                characters long.</small>
+        </div>
+    </div>
+    <div class="formGroup">
+        <label for="password">Password:</label>
+        <input id="password" formControlName="password" class="form-control" required type="password" />
+        <div
+            *ngIf="propertyOwnerForm.get('password')?.invalid && (propertyOwnerForm.get('password')?.touched || propertyOwnerForm.get('password')?.dirty)">
+            <small *ngIf="propertyOwnerForm.get('password')?.errors?.['required']">Password is required.</small>
+            <small *ngIf="propertyOwnerForm.get('password')?.errors?.['minlength']">Password must be at least 8
+                characters long.</small>
+            <small *ngIf="propertyOwnerForm.get('password')?.errors?.['pattern']">Password must contain at least one
+                number and one special character.</small>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="propertyOwnerForm.invalid">Create Property Owner</button>
+</form>
