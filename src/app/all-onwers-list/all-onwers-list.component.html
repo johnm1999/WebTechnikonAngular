@@ -1,0 +1,37 @@
+<div class="container mt-4">
+    <h2 class="mb-4">List of Property Owners</h2>
+
+    <button class="btn btn-primary mb-3" (click)="getAllOwners()">Load Owners</button>
+
+    <!-- Εμφάνιση μηνύματος όταν δεν υπάρχουν ιδιοκτήτες -->
+    <div *ngIf="noOwnersFound" class="alert alert-warning" role="alert">
+        No property owners found. Please try loading again.
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">VAT</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Email</th>
+          <th scope="col">User Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let owner of owners">
+          <td>{{ owner.id }}</td>
+          <td>{{ owner.vat }}</td>
+          <td>{{ owner.firstName }}</td>
+          <td>{{ owner.lastName }}</td>
+          <td>{{ owner.address }}</td>
+          <td>{{ owner.phoneNumber }}</td>
+          <td>{{ owner.email }}</td>
+          <td>{{ owner.userName }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
