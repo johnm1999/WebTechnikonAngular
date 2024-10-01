@@ -1,1 +1,16 @@
-<p>home works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" (click)="navigateToHome()">Home</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" (click)="navigateToCreate()">Create Owner</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="navigateToUpdate()">Update Owner</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="navigateToGetAll()">Get All Users</a>
+      </li>
+    </ul>
+  </div>
+</nav>

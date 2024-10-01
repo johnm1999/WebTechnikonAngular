@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common'; // Για ngIf και άλλες
 })
 export class CreateOwnerComponent {
   propertyOwnerForm: FormGroup;
+  router: any;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.propertyOwnerForm = this.fb.group({
@@ -31,8 +32,10 @@ export class CreateOwnerComponent {
       this.http.post('http://localhost:8080/webTechnikon-1.0-SNAPSHOT/resources/propertyOwners/create', this.propertyOwnerForm.value)
         .subscribe((response: any) => {
           console.log('Property owner created:', response);
+          this.router.navigate(['/']);
         }, (error: any) => {
           console.error('Error creating property owner:', error);
+          this.router.navigate(['/']);
         });
     }
   }

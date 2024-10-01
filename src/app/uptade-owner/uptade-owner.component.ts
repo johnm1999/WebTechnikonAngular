@@ -58,6 +58,7 @@ export class UptadeOwnerComponent {
     if (this.propertyOwnerForm.valid) {
       this.http.put(`http://localhost:8080/webTechnikon-1.0-SNAPSHOT/resources/propertyOwners/updateby/${this.ownerId}`, this.propertyOwnerForm.value).subscribe(response => {
         console.log('Property owner updated:', response);
+        this.router.navigate(['/']);
       }, error => {
         console.error('Error updating property owner:', error);
       });

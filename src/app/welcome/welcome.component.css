@@ -1,0 +1,20 @@
+.welcome-container {
+    background-color: #f8f9fa; /* Light background */
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+h1 {
+    color: #007bff; /* Bootstrap primary color */
+}
+
+h3 {
+    color: #6c757d; /* Bootstrap secondary color */
+}
+
+p {
+    font-size: 1.2em;
+    color: #495057; /* Darker text */
+}

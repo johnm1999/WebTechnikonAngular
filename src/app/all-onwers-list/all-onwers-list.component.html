@@ -3,7 +3,7 @@
 
     <button class="btn btn-primary mb-3" (click)="getAllOwners()">Load Owners</button>
 
-    <!-- Εμφάνιση μηνύματος όταν δεν υπάρχουν ιδιοκτήτες -->
+    <!-- If there is no owner -->
     <div *ngIf="noOwnersFound" class="alert alert-warning" role="alert">
         No property owners found. Please try loading again.
     </div>
