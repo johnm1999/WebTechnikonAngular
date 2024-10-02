@@ -1,7 +1,7 @@
 <div class="container mt-5">
-  <h2 class="mb-4">Update Property Owner</h2>
+  <h2 class="mb-4 text-center">Update Property Owner</h2>
 
-  <form (ngSubmit)="onIdSubmit()" class="mb-4">
+  <form (ngSubmit)="onIdSubmit()" class="mb-4 card">
     <div class="mb-3">
       <label for="ownerId" class="form-label">Enter Owner ID:</label>
       <input type="number" id="ownerId" [(ngModel)]="ownerId" name="ownerId" class="form-control" required>
@@ -10,9 +10,9 @@
   </form>
 
   <div *ngIf="ownerDataLoaded">
-    <h3 class="mb-4">Edit Owner Information</h3>
+    <h3 class="mb-4 text-center" >Edit Owner Information</h3>
 
-    <form [formGroup]="propertyOwnerForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="propertyOwnerForm" (ngSubmit)="onSubmit()" class="card">
       <div class="mb-3">
         <label for="vat" class="form-label">VAT:</label>
         <input id="vat" formControlName="vat" type="text" class="form-control" required>
@@ -61,8 +61,11 @@
         <div *ngIf="propertyOwnerForm.get('password')?.errors?.['required']" class="text-danger">Password is required.</div>
       </div>
 
-      <button type="submit" class="btn btn-success">Update Owner</button>
-      <button type="button" class="btn btn-danger ms-2" (click)="safeDelete()">Safe Delete</button>
+      <div class="d-flex">
+        <button type="submit" class="btn btn-success btn-sm">Update Owner</button>
+        <button type="button" class="btn btn-danger btn-sm ms-2" (click)="safeDelete()">Safe Delete</button>
+      </div>
+      
     </form>
   </div>
 </div>
