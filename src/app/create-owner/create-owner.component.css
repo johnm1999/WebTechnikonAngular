@@ -1,0 +1,23 @@
+/* Το στυλ για την καρτέλα */
+.card {
+    max-width: 800px; /* Ύψος καρτέλας */
+    margin: 0 auto; /* Κεντράρισμα */
+    padding: 20px; /* Εσωτερικό padding */
+    border: 1px solid #ccc; /* Περίγραμμα */
+    border-radius: 10px; /* Γωνίες */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Σκιά */
+    background-color: #fff; /* Χρώμα φόντου */
+}
+
+.text-center {
+    text-align: center; /* Κεντράρισμα κειμένου */
+}
+
+.formGroup {
+    margin-bottom: 15px; /* Κενό ανάμεσα στις φόρμες */
+}
+
+.btn {
+    display: block; /* Κεντράρισμα κουμπιού */
+    width: 100%; /* Πλήρης πλάτος */
+}
