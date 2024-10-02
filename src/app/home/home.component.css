@@ -1,16 +1,15 @@
-/* Styles for the navigation bar buttons */
 .nav-link {
-    border-radius: 15px; /* Rounded corners for buttons */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for effects */
+    border-radius: 15px; 
+    transition: background-color 0.3s, color 0.3s; 
   }
   
   .nav-link:hover {
-    background-color: #007bff; /* Change background color on hover */
-    color: white; /* hover */
+    background-color: #007bff; 
+    color: white; 
   }
   
   .navbar {
     margin-top: 2px;
-    margin-bottom: 20px; /* Space below the navbar */
+    margin-bottom: 20px; 
   }
   
