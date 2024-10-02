@@ -58,7 +58,7 @@ export class UptadeOwnerComponent {
     if (this.propertyOwnerForm.valid) {
       this.http.put(`http://localhost:8080/webTechnikon-1.0-SNAPSHOT/resources/propertyOwners/updateby/${this.ownerId}`, this.propertyOwnerForm.value).subscribe(response => {
         console.log('Property owner updated:', response);
-        this.router.navigate(['/']);
+        this.router.navigate(['/welcome']);
       }, error => {
         console.error('Error updating property owner:', error);
       });
@@ -69,6 +69,7 @@ export class UptadeOwnerComponent {
     this.http.put(`http://localhost:8080/webTechnikon-1.0-SNAPSHOT/resources/propertyOwners/safedeleteby/${this.ownerId}`, null)
       .subscribe(response => {
         console.log(response);
+        this.router.navigate(['/welcome']);
         this.ownerDataLoaded = false; // clear form
         this.propertyOwnerForm.reset(); 
       }, error => {
