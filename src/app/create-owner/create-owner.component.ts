@@ -32,10 +32,10 @@ export class CreateOwnerComponent {
       this.http.post('http://localhost:8080/webTechnikon-1.0-SNAPSHOT/resources/propertyOwners/create', this.propertyOwnerForm.value)
         .subscribe((response: any) => {
           console.log('Property owner created:', response);
-          this.router.navigate(['/']);
+          // this.router.navigate(['/welcome']);
         }, (error: any) => {
           console.error('Error creating property owner:', error);
-          this.router.navigate(['/']);
+          // this.router.navigate(['/welcome']);
         });
     }
   }
